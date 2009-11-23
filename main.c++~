@@ -64,8 +64,6 @@ int main () {
 	cout << x << endl;
 	cout << y << endl;
         string s;
-        inFile >> s;
-	cout << s << endl;
     }
     #ifdef TEST
         // ----------
