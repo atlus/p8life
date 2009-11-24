@@ -33,7 +33,8 @@ To document the program:
 #include <cassert>   // assert
 #include <iostream>  // cout, endl
 #include <stdexcept> // invalid_argument, out_of_range
-#include <fstream>
+
+#include "Life.h"
 
 #ifdef TEST
     #include "cppunit/TestSuite.h"      // TestSuite
@@ -49,24 +50,7 @@ To document the program:
 int main () {
     using namespace std;
     ios_base::sync_with_stdio(false); // turn off synchronization with C I/O
-    ifstream inFile;
-    inFile.open("LifeConwayCell.in");
-    if (!inFile) {
-    	cerr << "Unable to open file datafile.txt";
-    	exit(1);   // call system to stop
-    }
-    else{
-	cout << "FILE FOUND" << endl;
-	int x;
-	int y;
- 	inFile >> x;
-	inFile >> y;
-	cout << x << endl;
-	cout << y << endl;
-        string s;
-        inFile >> s;
-	cout << s << endl;
-    }
+
     #ifdef TEST
         // ----------
         // unit tests
@@ -85,7 +69,7 @@ int main () {
         // -----------------------
 
         try {
-            cout << "*** Life<ConwayCell> 109x69 ***" << endl;
+            cout << "*** Life<ConwayCell> 109x69 ***" << endl << endl;
             /*
             read LifeConwayCell.in
             Print grid.
@@ -96,7 +80,16 @@ int main () {
             Simulate 2500 moves.
             Print grid.
             */
-            }
+			Life<ConwayCell> L;
+			L.read("LifeConwayCell.in");
+			L.print();
+			L.simulate(283);
+			L.print();
+			L.simulate(40);
+			L.print();
+			L.simulate(2500);
+			L.print();
+        }
         catch (const invalid_argument&) {
             assert(false);}
         catch (const out_of_range&) {
@@ -107,14 +100,21 @@ int main () {
         // -----------------------
 
         try {
-            cout << "*** Life<FredkinCell> 20x20 ***" << endl;
+            cout << "*** Life<FredkinCell> 20x20 ***" << endl << endl;
             /*
             read LifeFredkinCell.in
             Print grid.
             Simulate 2 moves.
             Print every grid.
             */
-            }
+			Life<FredkinCell> L;
+			L.read("LifeFredkinCell.in");
+			L.print();
+			L.simulate(1);
+			L.print();
+			L.simulate(1);
+			L.print();
+        }
         catch (const invalid_argument&) {
             assert(false);}
         catch (const out_of_range&) {
@@ -125,14 +125,22 @@ int main () {
         // ---------------
 
         try {
-            cout << "*** Life<Cell> 20x20 ***" << endl;
+            cout << "*** Life<Cell> 20x20 ***" << endl << endl;
             /*
             read LifeCell.in
             Print grid.
             Simulate 5 moves.
             Print every grid.
             */
-            }
+			Life<Cell> L;
+			L.read("LifeCell.in");
+			L.print();
+			for (int i = 0; i < 5; ++i)
+			{
+				L.simulate(1);
+				L.print();
+			}
+        }
         catch (const invalid_argument&) {
             assert(false);}
         catch (const out_of_range&) {
@@ -140,4 +148,3 @@ int main () {
     #endif // NDEBUG
 
     return 0;}
-
