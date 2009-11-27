@@ -54,3 +54,4 @@ class FredkinCell : public AbstractCell
 			return 0;
 		}
 };
+
