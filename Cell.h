@@ -8,6 +8,9 @@ class Cell {
 
     friend bool operator != (const Cell& lhs, const Cell& rhs) {
         return !(lhs == rhs);}*/
+ /*! \var pointer _p
+ *     \brief Points to a cell of AbstractCell
+ *     */
 
     public:
         typedef AbstractCell      value_type;
@@ -22,6 +25,10 @@ class Cell {
         pointer _p;
 
     protected:
+    /**
+    *Returns the pointer
+    *@return Returns the pointer
+    */
         pointer get () {
             return _p;}
 

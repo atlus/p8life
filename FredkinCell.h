@@ -1,13 +1,21 @@
 class FredkinCell : public AbstractCell
 {
+ /*! \var int age
+ *     \brief Value of cell's age
+ *     */
 	private:
 		int age;
-
+/**
+* Default Constructor
+*/
 	public:
 		FredkinCell()
 		{
 		}
-
+/**
+*Constructor takes in char to determine if it's alive or not
+*@param x Character passed in
+*/
 		FredkinCell(char x)
 		{
 			if (x == '-')
@@ -21,7 +29,10 @@ class FredkinCell : public AbstractCell
 				age = x - '0';
 			}
 		}
-
+/**
+* Returns cell symbol
+*@return Returns the Fredkin symbol
+*/
 		char symbol()
 		{
 			if (alive)
@@ -32,7 +43,10 @@ class FredkinCell : public AbstractCell
 			}
 			return '-';
 		}
-
+/**
+*Attempts to evolve
+*@return Returns flag if evolved or not
+*/ 
 		int evolve()
 		{
 			if (!alive && (neighbors == 1 || neighbors == 3))
