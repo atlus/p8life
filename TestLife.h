@@ -19,7 +19,6 @@
 // ----------
 
 namespace cs {
-
 // --------
 // TestLife
 // --------
@@ -29,13 +28,33 @@ struct TestLife : CppUnit::TestFixture {
     // tests
     // -----
 
-    // <your tests>
-
+   void testFredAlive(){
+        FredkinCell fred('0');
+        CPPUNIT_ASSERT(fred.symbol() == '0');
+    }
+   void testFredDead(){
+        FredkinCell fred('-');
+        CPPUNIT_ASSERT(fred.symbol() == '-');
+    }
+    void testConAlive(){
+        ConwayCell con('*'); 
+        //std::cout << con.symbol() << std::endl;
+        CPPUNIT_ASSERT(con.symbol() == '*');
+    }
+    void testConDead(){
+        ConwayCell con('.'); 
+        
+        CPPUNIT_ASSERT(con.symbol() == '.');
+    }
     // -----
     // suite
     // -----
 
     CPPUNIT_TEST_SUITE(TestLife);
+    CPPUNIT_TEST(testFredAlive);
+    CPPUNIT_TEST(testFredDead);
+    CPPUNIT_TEST(testConAlive);
+    CPPUNIT_TEST(testConDead);
     CPPUNIT_TEST_SUITE_END();};
 
 } // cs

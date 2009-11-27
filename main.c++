@@ -57,7 +57,7 @@ int main () {
         // ----------
 
         CppUnit::TextTestRunner tr;
-        tr.addTest(TestLife::suite());
+        tr.addTest(cs::TestLife::suite());
         tr.run();
     #else
         // -------
