@@ -11,11 +11,28 @@ using namespace std;
 template <typename T>
 class Life
 {
+/*! \var vector<vector<T> > grid
+ *     \brief Grid of Cells
+ *     */
+ /*! \var int R
+ *     \brief Row length
+ *     */
+ /*! \var int C
+ *     \brief Column length
+ *     */
+ /*! \var int gen 
+ *     \brief Generation
+ *     */
+ /*! \var int pop
+ *     \brief Population
+ *     */
 	private:
 		vector< vector<T> > grid;
 		int R, C;
 		int gen, pop;
-
+/**
+*Counts the Neightbors
+*/
 		void countNeighbors()
 		{
 			for (int r = 0; r < R; ++r)
@@ -148,12 +165,17 @@ class Life
 		}*/
 
 	public:
+	/**
+	*Default constructor
+	*/
 		Life()
 		{
 			gen = 0;
 			pop = 0;
 		}
-
+/**
+*Reads in a local file and sets up the grid
+*/
 		void read(const char *file)
 		{
 			ifstream in;
@@ -174,7 +196,10 @@ class Life
 
 			in.close();
 		}
-
+/**
+*Simulates turns
+*@param N number of turns to simulate
+*/
 		void simulate(int N)
 		{
 			for (int i = 0; i < N; ++i)
@@ -186,7 +211,9 @@ class Life
 			}
 			gen += N;
 		}
-
+/**
+*Prints the grid
+*/
 		void print()
 		{
 			cout << "Generation = " << gen << ", Population = " << pop << "." << endl;

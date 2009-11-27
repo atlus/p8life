@@ -31,16 +31,25 @@ class Cell {
     */
         pointer get () {
             return _p;}
-
+    /**
+    *Returns const pointer
+    *@return Returns a const pointer
+    */
         const_pointer get () const {
             return _p;}
 
     public:
+      /**
+    *Default Constructor
+    */
 		Cell()
 		{
 			_p = 0;
 		}
-
+    /**
+    *Conway or Fredkin Constructor
+    *@param x Determines the type of cell
+    */
 		Cell(char x)
 		{
 			if (x == '*' || x == '.')
@@ -69,22 +78,32 @@ class Cell {
 
         void swap (Cell& that) {
             std::swap(_p, that._p);}
-
+    /**
+    *@return True if alive else dead
+    */
 		bool isAlive()
 		{
 			return _p->isAlive();
 		}
-
+/**
+*Increments its neighbors
+*/
 		void incNeighbors()
 		{
 			_p->incNeighbors();
 		}
 
+/**
+*@return Returns the cell's symbol
+*/
 		char symbol()
 		{
 			return _p->symbol();
 		}
-
+/**
+*Attempts to evolve, if Fredkin Cell age is two and can evolve it becomes conway
+@return int of population change
+*/
 		int evolve()
 		{
 			int r = _p->evolve();
