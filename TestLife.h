@@ -43,8 +43,15 @@ struct TestLife : CppUnit::TestFixture {
     }
     void testConDead(){
         ConwayCell con('.'); 
-        
         CPPUNIT_ASSERT(con.symbol() == '.');
+    }
+    void CellIsCon(){
+        Cell fred('0'); 
+        CPPUNIT_ASSERT(fred.symbol() == '0');
+    }
+    void CellIsFred(){
+        Cell con('*'); 
+        CPPUNIT_ASSERT(con.symbol() == '*');
     }
     // -----
     // suite
@@ -55,6 +62,10 @@ struct TestLife : CppUnit::TestFixture {
     CPPUNIT_TEST(testFredDead);
     CPPUNIT_TEST(testConAlive);
     CPPUNIT_TEST(testConDead);
+    
+    CPPUNIT_TEST(CellIsCon);
+    CPPUNIT_TEST(CellIsFred);
+    
     CPPUNIT_TEST_SUITE_END();};
 
 } // cs
