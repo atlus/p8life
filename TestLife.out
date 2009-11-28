@@ -1,0 +1,30 @@
+g++ -ansi -pedantic -lcppunit -ldl -Wall -DTEST main.c++ -o main.app
+valgrind main.app
+==28067== Memcheck, a memory error detector.
+==28067== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==28067== Using LibVEX rev 1878, a library for dynamic binary translation.
+==28067== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==28067== Using valgrind-3.4.0, a dynamic binary instrumentation framework.
+==28067== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==28067== For more details, rerun with: -v
+==28067== 
+......
+
+
+OK (6 tests)
+
+
+==28067== 
+==28067== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 21 from 1)
+==28067== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==28067== malloc/free: 171 allocs, 165 frees, 141,844 bytes allocated.
+==28067== For counts of detected errors, rerun with: -v
+==28067== searching for pointers to 6 not-freed blocks.
+==28067== checked 124,236 bytes.
+==28067== 
+==28067== LEAK SUMMARY:
+==28067==    definitely lost: 0 bytes in 0 blocks.
+==28067==      possibly lost: 0 bytes in 0 blocks.
+==28067==    still reachable: 122,880 bytes in 6 blocks.
+==28067==         suppressed: 0 bytes in 0 blocks.
+==28067== Rerun with --leak-check=full to see details of leaked memory.
