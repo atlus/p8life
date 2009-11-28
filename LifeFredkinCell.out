@@ -1,3 +1,14 @@
+clear
+[H[Jg++ -ansi -pedantic -Wall main.c++ -o main.app
+valgrind main.app
+==28036== Memcheck, a memory error detector.
+==28036== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==28036== Using LibVEX rev 1878, a library for dynamic binary translation.
+==28036== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==28036== Using valgrind-3.4.0, a dynamic binary instrumentation framework.
+==28036== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==28036== For more details, rerun with: -v
+==28036== 
 *** Life<FredkinCell> 20x20 ***
 
 Generation = 0, Population = 4.
@@ -65,3 +76,18 @@ Generation = 2, Population = 16.
 --------------------
 --------------------
 --------------------
+
+==28036== 
+==28036== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 17 from 1)
+==28036== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==28036== malloc/free: 52 allocs, 46 frees, 145,026 bytes allocated.
+==28036== For counts of detected errors, rerun with: -v
+==28036== searching for pointers to 6 not-freed blocks.
+==28036== checked 103,772 bytes.
+==28036== 
+==28036== LEAK SUMMARY:
+==28036==    definitely lost: 0 bytes in 0 blocks.
+==28036==      possibly lost: 0 bytes in 0 blocks.
+==28036==    still reachable: 122,880 bytes in 6 blocks.
+==28036==         suppressed: 0 bytes in 0 blocks.
+==28036== Rerun with --leak-check=full to see details of leaked memory.

@@ -67,10 +67,10 @@ int main () {
         // -----------------------
         // life conway cell 109x69
         // -----------------------
-
+/*
         try {
             cout << "*** Life<ConwayCell> 109x69 ***" << endl << endl;
-            /*
+            
             read LifeConwayCell.in
             Print grid.
             Simulate 283 moves.
@@ -79,7 +79,7 @@ int main () {
             Print grid.
             Simulate 2500 moves.
             Print grid.
-            */
+           
 			Life<ConwayCell> L;
 			L.read("LifeConwayCell.in");
 			L.print();
@@ -94,19 +94,20 @@ int main () {
             assert(false);}
         catch (const out_of_range&) {
             assert(false);}
-
+ */
         // -----------------------
         // life fredkin cell 20x20
         // -----------------------
-
+/*
         try {
             cout << "*** Life<FredkinCell> 20x20 ***" << endl << endl;
-            /*
+            
             read LifeFredkinCell.in
             Print grid.
             Simulate 2 moves.
             Print every grid.
-            */
+           
+
 			Life<FredkinCell> L;
 			L.read("LifeFredkinCell.in");
 			L.print();
@@ -119,19 +120,19 @@ int main () {
             assert(false);}
         catch (const out_of_range&) {
             assert(false);}
-
+*/ 
         // ---------------
         // life cell 20x20
         // ---------------
 
         try {
             cout << "*** Life<Cell> 20x20 ***" << endl << endl;
-            /*
+ /*           
             read LifeCell.in
             Print grid.
             Simulate 5 moves.
             Print every grid.
-            */
+*/             
 			Life<Cell> L;
 			L.read("LifeCell.in");
 			L.print();
@@ -145,6 +146,8 @@ int main () {
             assert(false);}
         catch (const out_of_range&) {
             assert(false);}
+        
+       
     #endif // NDEBUG
 
     return 0;}

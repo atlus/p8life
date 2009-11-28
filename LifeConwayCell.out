@@ -1,3 +1,14 @@
+clear
+[H[Jg++ -ansi -pedantic -Wall main.c++ -o main.app
+valgrind main.app
+==27997== Memcheck, a memory error detector.
+==27997== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==27997== Using LibVEX rev 1878, a library for dynamic binary translation.
+==27997== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==27997== Using valgrind-3.4.0, a dynamic binary instrumentation framework.
+==27997== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==27997== For more details, rerun with: -v
+==27997== 
 *** Life<ConwayCell> 109x69 ***
 
 Generation = 0, Population = 35.
@@ -443,3 +454,18 @@ Generation = 2823, Population = 192.
 .....................................................................
 .....................................................................
 .....................................................................
+
+==27997== 
+==27997== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 17 from 1)
+==27997== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==27997== malloc/free: 230 allocs, 224 frees, 315,374 bytes allocated.
+==27997== For counts of detected errors, rerun with: -v
+==27997== searching for pointers to 6 not-freed blocks.
+==27997== checked 103,808 bytes.
+==27997== 
+==27997== LEAK SUMMARY:
+==27997==    definitely lost: 0 bytes in 0 blocks.
+==27997==      possibly lost: 0 bytes in 0 blocks.
+==27997==    still reachable: 122,880 bytes in 6 blocks.
+==27997==         suppressed: 0 bytes in 0 blocks.
+==27997== Rerun with --leak-check=full to see details of leaked memory.
