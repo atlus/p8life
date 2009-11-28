@@ -1,6 +1,3 @@
-clear
-[H[Jg++ -ansi -pedantic -Wall main.c++ -o main.app
-valgrind main.app
 ==28036== Memcheck, a memory error detector.
 ==28036== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
 ==28036== Using LibVEX rev 1878, a library for dynamic binary translation.
